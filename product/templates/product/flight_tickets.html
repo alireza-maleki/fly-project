@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Details</title>
+</head>
+<body>
+
+<h1>Flight Ticket Details</h1>
+
+{% if ticket %}
+    <ul>
+        <li><strong>Passenger Name:</strong> {{ ticket.passenger_name }}</li>
+        <li><strong>Passenger Email:</strong> {{ ticket.passenger_email }}</li>
+        <li><strong>Departure City:</strong> {{ ticket.departure_city }}</li>
+        <li><strong>Destination City:</strong> {{ ticket.destination_city }}</li>
+        <li><strong>Departure Date:</strong> {{ ticket.departure_date }}</li>
+        <li><strong>Arrival Date:</strong> {{ ticket.arrival_date }}</li>
+        <li><strong>Ticket Number:</strong> {{ ticket.ticket_number }}</li>
+        <li><strong>Ticket Price:</strong> {{ ticket.ticket_price }}</li>
+        <li><strong>Created At:</strong> {{ ticket.created_at }}</li>
+    </ul>
+{% else %}
+    <p>No details available for this flight ticket.</p>
+{% endif %}
+
+<a href="{% url 'flight_tickets' %}">Back to Flight Tickets</a>
+
+</body>
+</html>
